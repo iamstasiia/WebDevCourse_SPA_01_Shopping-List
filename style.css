@@ -3,3 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header, main {
+    background-color: lightcoral;
+    width: 300px;
+    margin: 0 auto;
+}
+
+header {
+    h1 {
+        text-align: center;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
+
+div.new-article {
+    background-color: lightblue;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
