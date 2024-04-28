@@ -5,7 +5,9 @@ const shoppingCart = document.getElementById("shopping-cart");
 textForm.addEventListener("submit", (event) => {
     if (textInput.value.length !== 0) {
         const listItem = document.createElement("li");
-        listItem.innerHTML = textInput.value;
+        listItem.innerHTML =
+            textInput.value[0].toUpperCase() +
+            textInput.value.slice(1).toLowerCase();
         shoppingCart.append(listItem);
 
         const removeButton = document.createElement("button");
