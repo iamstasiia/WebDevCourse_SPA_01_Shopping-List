@@ -1,7 +1,6 @@
 const textInput = document.getElementById("text-input");
 const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
-const crossedOut = document.getElementById("crossed-out");
 
 textForm.addEventListener("submit", (event) => {
     if (textInput.value.length !== 0) {
@@ -25,15 +24,30 @@ textForm.addEventListener("submit", (event) => {
 
 shoppingCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
-        event.target.classList.toggle("checked");
+        event.target.classList.add("checked");
+
+        setTimeout(() => {
+            event.target.style.opacity = 0;
+        }, 1000);
 
         setTimeout(() => {
             shoppingCart.append(event.target);
         }, 2000);
+
+        setTimeout(() => {
+            event.target.style.opacity = 1;
+        }, 2100);
     }
 
     if (event.target.tagName === "I") {
         const listItem = event.target.parentElement.parentElement;
-        listItem.remove();
+
+        setTimeout(() => {
+            listItem.style.opacity = 0;
+        }, 10);
+
+        setTimeout(() => {
+            listItem.remove();
+        }, 1000);
     }
 });
