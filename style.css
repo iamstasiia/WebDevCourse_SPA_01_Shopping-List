@@ -57,22 +57,27 @@ header h1 {
 }
 
 main {
-    border: 1px solid;
     height: calc(100% - 2.5rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 1rem;
 
     li {
         list-style: none;
         cursor: pointer;
         position: relative;
-        padding-left: 1.5rem;
+        padding: 0 0 0.5rem 2rem;
 
         &::before {
             content: '☐';
             position: absolute;
             left: 0;
+        }
+
+        button {
+            position: absolute;
+            right: 0.8rem;
         }
     }
 
@@ -85,7 +90,7 @@ main {
         }
     }
 
-    div {
+    form {
         display: flex;
         flex-wrap: nowrap;
         background-color: var(--light-gray);
