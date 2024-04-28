@@ -78,7 +78,13 @@ main {
         button {
             position: absolute;
             right: 0.8rem;
-        }
+            background: none;
+
+            i {
+                color: var(--red);
+                cursor: pointer;
+            }
+        } 
     }
 
     li.checked {
