@@ -68,6 +68,8 @@ main {
         cursor: pointer;
         position: relative;
         padding: 0 0 0.5rem 2rem;
+        opacity: 0;
+        transition: all 1.5s ease;
 
         &::before {
             content: '☐';

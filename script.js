@@ -1,6 +1,7 @@
 const textInput = document.getElementById("text-input");
 const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
+const crossedOut = document.getElementById("crossed-out");
 
 textForm.addEventListener("submit", (event) => {
     if (textInput.value.length !== 0) {
@@ -14,6 +15,10 @@ textForm.addEventListener("submit", (event) => {
         removeButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
         listItem.appendChild(removeButton);
 
+        setTimeout(() => {
+            listItem.style.opacity = 1;
+        }, 10);
+
         textInput.value = "";
     }
 });
@@ -21,6 +26,10 @@ textForm.addEventListener("submit", (event) => {
 shoppingCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
         event.target.classList.toggle("checked");
+
+        setTimeout(() => {
+            shoppingCart.append(event.target);
+        }, 2000);
     }
 
     if (event.target.tagName === "I") {
