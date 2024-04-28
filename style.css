@@ -47,6 +47,9 @@ div.app {
     background-repeat: no-repeat;
     grid-column-start: 2;
     padding: 2rem 2rem 2rem 4.5rem;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    border: 1px solid;
 }
 
 header h1 {
@@ -57,10 +60,6 @@ header h1 {
 }
 
 main {
-    height: calc(100% - 2.5rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding-top: 1rem;
 
     li {
@@ -81,11 +80,11 @@ main {
             position: absolute;
             right: 0.8rem;
             background: none;
+            cursor: pointer;
 
             i {
                 color: var(--red);
-                cursor: pointer;
-            }
+            }            
         } 
     }
 
@@ -95,6 +94,29 @@ main {
 
         &::before {
             content: '☑';
+        }
+    }
+}
+
+footer {
+    div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 0.75rem 2rem;
+
+        button {
+            background: none;
+            border: 1px solid;
+            border-radius: 0.25rem;
+            padding: 0 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--dark-red);
+                border: 1px solid var(--dark-red);
+                color: white;
+            }
         }
     }
 
@@ -117,11 +139,15 @@ main {
             padding: 0.5rem;
             border-radius: 0.5rem;
             background: var(--orange);
-
+            cursor: pointer;
 
             i {
                 font-size: 1.5rem;
                 color: var(--light-gray);
+            }
+
+            &:hover {
+                background: var(--dark-green);
             }
         }
     }

@@ -28,15 +28,15 @@ shoppingCart.addEventListener("click", (event) => {
 
         setTimeout(() => {
             event.target.style.opacity = 0;
-        }, 1000);
+        }, 500);
 
         setTimeout(() => {
             shoppingCart.append(event.target);
-        }, 2000);
+        }, 1500);
 
         setTimeout(() => {
             event.target.style.opacity = 1;
-        }, 2100);
+        }, 2000);
     }
 
     if (event.target.tagName === "I") {
@@ -50,4 +50,30 @@ shoppingCart.addEventListener("click", (event) => {
             listItem.remove();
         }, 1000);
     }
+});
+
+document.getElementById("delete-crossed").addEventListener("click", () => {
+    const crossedItems = document.querySelectorAll(".checked");
+
+    crossedItems.forEach((item) => {
+        setTimeout(() => {
+            item.style.opacity = 0;
+        }, 10);
+        setTimeout(() => {
+            item.remove();
+        }, 1000);
+    });
+});
+
+document.getElementById("delete-all").addEventListener("click", () => {
+    const crossedItems = document.querySelectorAll("#shopping-cart li");
+
+    crossedItems.forEach((item) => {
+        setTimeout(() => {
+            item.style.opacity = 0;
+        }, 10);
+        setTimeout(() => {
+            item.remove();
+        }, 1000);
+    });
 });
