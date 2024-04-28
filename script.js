@@ -1,6 +1,7 @@
 const textInput = document.getElementById("text-input");
 const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
+const crossedCart = document.getElementById("crossed-cart");
 
 textForm.addEventListener("submit", (event) => {
     if (textInput.value.length !== 0) {
@@ -31,7 +32,7 @@ shoppingCart.addEventListener("click", (event) => {
         }, 500);
 
         setTimeout(() => {
-            shoppingCart.append(event.target);
+            crossedCart.append(event.target);
         }, 1500);
 
         setTimeout(() => {
@@ -66,7 +67,7 @@ document.getElementById("delete-crossed").addEventListener("click", () => {
 });
 
 document.getElementById("delete-all").addEventListener("click", () => {
-    const crossedItems = document.querySelectorAll("#shopping-cart li");
+    const crossedItems = document.querySelectorAll("main li");
 
     crossedItems.forEach((item) => {
         setTimeout(() => {
