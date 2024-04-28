@@ -3,17 +3,17 @@ const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
 
 textForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const newProduct = textInput.value;
-    const listItem = document.createElement("li");
-    listItem.innerHTML = newProduct;
-    shoppingCart.append(listItem);
+    if (textInput.value.length !== 0) {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = textInput.value;
+        shoppingCart.append(listItem);
 
-    const removeButton = document.createElement("button");
-    removeButton.innerHTML = `<i class="fa-regular fa-trash-can" style="color: #A4402A;"></i>`;
-    listItem.appendChild(removeButton);
+        const removeButton = document.createElement("button");
+        removeButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
+        listItem.appendChild(removeButton);
 
-    textInput.value = "";
+        textInput.value = "";
+    }
 });
 
 shoppingCart.addEventListener("click", (event) => {
