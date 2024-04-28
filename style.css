@@ -1,28 +1,115 @@
+@import url(https://fonts.bunny.net/css?family=abril-fatface:400|anaheim:400|fredericka-the-great:400);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    font-family: 'Anaheim', sans-serif;
+    font-size: 16px;
 }
 
-header, main {
-    background-color: lightcoral;
-    width: 300px;
-    margin: 0 auto;
+:root {
+    --dark-red: #A4402A;
+    --red: #BC4E50;
+    --orange: #B66B35;
+    --dark-beige: #D6A88C;
+    --beige: #E8C7B2;
+    --dark-green: #4E6543;
+    --green: #718E66;
+    --light-green: #ADBB9F;
+    --light-gray: #EEECE5;
 }
 
-header {
-    h1 {
-        text-align: center;
-    }
+body {
+    background: url(./img/pexels-element5-1470170.jpg) top left/cover no-repeat fixed;
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: minmax(0px, 58%) minmax(20rem, auto) minmax(0px, 10%);
 
-    input, button {
-        width: 100%;
-    }
+    box-shadow:
+    inset var(--green) -6rem 0, 
+    inset var(--red) -12rem 0, 
+    inset var(--orange) -18rem 0, 
+    inset var(--dark-beige) -24rem 0, 
+    inset var(--dark-green) -30rem 0,
+    inset var(--light-green) -36rem 0,
+    inset var(--light-gray) -42rem 0;
 }
 
-div.new-article {
-    background-color: lightblue;
-    width: 300px;
+div.app {
+    height: 100%;
+    background-image: url(./img/notebook.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    grid-column-start: 2;
+    padding: 2rem 2rem 2rem 4.5rem;
+}
+
+header h1 {
+    font-family: 'Fredericka the Great', display;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+main {
+    border: 1px solid;
+    height: calc(100% - 2.5rem);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    li {
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        padding-left: 1.5rem;
+
+        &::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    li.checked {
+        text-decoration: line-through;
+        color: var(--orange);
+
+        &::before {
+            content: '☑';
+        }
+    }
+
+    div {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: var(--light-gray);
+        border-radius: 0.5rem;
+
+
+        input {
+            width: 100%;
+            font-size: 1rem;
+            padding: 0.5rem;
+            background: transparent;
+            outline: none;
+        }
+
+        button {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background: var(--orange);
+
+
+            i {
+                font-size: 1.5rem;
+                color: var(--light-gray);
+            }
+        }
+    }
 }
