@@ -31,13 +31,13 @@ body {
     grid-template-columns: minmax(0px, 58%) minmax(20rem, auto) minmax(0px, 10%);
 
     box-shadow:
-    inset var(--green) -6rem 0, 
-    inset var(--red) -12rem 0, 
-    inset var(--orange) -18rem 0, 
-    inset var(--dark-beige) -24rem 0, 
-    inset var(--dark-green) -30rem 0,
-    inset var(--light-green) -36rem 0,
-    inset var(--light-gray) -42rem 0;
+    inset var(--dark-beige) -5.75rem 0, 
+    inset var(--red) -11.5rem 0, 
+    inset var(--beige) -17.25rem 0, 
+    inset var(--dark-red) -23rem 0, 
+    inset var(--orange) -28.75rem 0,
+    inset var(--light-green) -34.5rem 0,
+    inset var(--dark-green) -40.25rem 0;
 }
 
 div.app {
@@ -49,7 +49,6 @@ div.app {
     padding: 2rem 2rem 2rem 4.5rem;
     display: grid;
     grid-template-rows: min-content auto min-content;
-    border: 1px solid;
 }
 
 header h1 {
