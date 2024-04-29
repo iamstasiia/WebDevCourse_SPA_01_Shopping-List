@@ -2,6 +2,7 @@ const textInput = document.getElementById("text-input");
 const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
 const crossedCart = document.getElementById("crossed-cart");
+const main = document.querySelector("main");
 
 textForm.addEventListener("submit", (event) => {
     if (textInput.value.length !== 0) {
@@ -39,18 +40,6 @@ shoppingCart.addEventListener("click", (event) => {
             event.target.style.opacity = 1;
         }, 1410);
     }
-
-    if (event.target.tagName === "I") {
-        const listItem = event.target.parentElement.parentElement;
-
-        setTimeout(() => {
-            listItem.style.opacity = 0;
-        }, 10);
-
-        setTimeout(() => {
-            listItem.remove();
-        }, 710);
-    }
 });
 
 crossedCart.addEventListener("click", (event) => {
@@ -69,9 +58,11 @@ crossedCart.addEventListener("click", (event) => {
             event.target.style.opacity = 1;
         }, 1410);
     }
+});
 
-    if (event.target.tagName === "I") {
-        const listItem = event.target.parentElement.parentElement;
+main.addEventListener("click", (e) => {
+    if (e.target.tagName === "I") {
+        const listItem = e.target.parentElement.parentElement;
 
         setTimeout(() => {
             listItem.style.opacity = 0;
