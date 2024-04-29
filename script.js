@@ -5,6 +5,8 @@ const crossedCart = document.getElementById("crossed-cart");
 const main = document.querySelector("main");
 
 textForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     if (textInput.value.length !== 0) {
         const listItem = document.createElement("li");
         listItem.innerHTML =
@@ -63,39 +65,29 @@ crossedCart.addEventListener("click", (event) => {
 main.addEventListener("click", (e) => {
     if (e.target.tagName === "I") {
         const listItem = e.target.parentElement.parentElement;
-
-        setTimeout(() => {
-            listItem.style.opacity = 0;
-        }, 10);
-
-        setTimeout(() => {
-            listItem.remove();
-        }, 710);
+        return Delete(listItem);
     }
 });
 
 document.getElementById("delete-crossed").addEventListener("click", () => {
     const crossedItems = document.querySelectorAll(".checked");
-
     crossedItems.forEach((item) => {
-        setTimeout(() => {
-            item.style.opacity = 0;
-        }, 10);
-        setTimeout(() => {
-            item.remove();
-        }, 710);
+        return Delete(item);
     });
 });
 
 document.getElementById("delete-all").addEventListener("click", () => {
-    const crossedItems = document.querySelectorAll("main li");
-
-    crossedItems.forEach((item) => {
-        setTimeout(() => {
-            item.style.opacity = 0;
-        }, 10);
-        setTimeout(() => {
-            item.remove();
-        }, 710);
+    const allItems = document.querySelectorAll("main li");
+    allItems.forEach((item) => {
+        return Delete(item);
     });
 });
+
+function Delete(element) {
+    setTimeout(() => {
+        element.style.opacity = 0;
+    }, 10);
+    setTimeout(() => {
+        element.remove();
+    }, 710);
+}
