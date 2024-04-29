@@ -24,4 +24,4 @@ Dieses Projekt wird mit HTML, CSS und JavaScript umgesetzt. Die Seite ist respon
 
 Dies ist derzeit keine vollwertige Anwendung, sondern eine einfache Webschnittstelle zur Verwaltung einer Einkaufsliste. Datenbank und andere erweiterte Funktionen werden in zukünftigen Versionen hinzugefügt.
 
-Viel Spaß beim Einkaufen!
+[Viel Spaß beim Testen! >>>](https://iamstasiia.github.io/WebDevCourse_SPA_01_Shopping-List/)

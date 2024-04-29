@@ -22,4 +22,4 @@ This project is implemented using HTML, CSS, and JavaScript. The page is respons
 
 This is currently not a full-fledged application but a simple web interface for managing a shopping list. Database and other advanced features will be added in future versions.
 
-Enjoy shopping!
+[Enjoy testing! >>>](https://iamstasiia.github.io/WebDevCourse_SPA_01_Shopping-List/)
