@@ -26,18 +26,18 @@ body {
     background: url(./img/pexels-element5-1470170.jpg) top left/cover no-repeat fixed;
     width: 100%;
     min-height: 100vh;
-    padding: 3rem 0;
+    padding: 3.5vw 0;
     display: grid;
-    grid-template-columns: minmax(0px, 58%) minmax(20rem, auto) minmax(0px, 10%);
+    grid-template-columns: minmax(0px, 57vw) minmax(20rem, auto) minmax(0px, 10vw);
 
     box-shadow:
-    inset var(--dark-beige) -5.75rem 0, 
-    inset var(--red) -11.5rem 0, 
-    inset var(--beige) -17.25rem 0, 
-    inset var(--dark-red) -23rem 0, 
-    inset var(--orange) -28.75rem 0,
-    inset var(--light-green) -34.5rem 0,
-    inset var(--dark-green) -40.25rem 0;
+    inset var(--dark-beige) -6.5vw 0,
+    inset var(--red) -13vw 0, 
+    inset var(--beige) -19.5vw 0, 
+    inset var(--dark-red) -26vw 0, 
+    inset var(--orange) -32.5vw 0,
+    inset var(--light-green) -39vw 0,
+    inset var(--dark-green) -45.5vw 0;
 }
 
 div.app {
@@ -46,7 +46,7 @@ div.app {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     grid-column-start: 2;
-    padding: 2rem 2rem 2rem 4.5rem;
+    padding: 2vw 2vw 3vw 5vw;
     display: grid;
     grid-template-rows: min-content auto min-content;
 }
@@ -59,13 +59,18 @@ header h1 {
 }
 
 main {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
 
     li {
+        min-width: 100%;
+        max-width: 26vw;
+        overflow-wrap: break-word;
         list-style: none;
         cursor: pointer;
+        padding: 0.25rem 0 0.25rem 2rem;
         position: relative;
-        padding: 0 0 0.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
         opacity: 0;
         transition: all 0.7s ease;
 
@@ -76,10 +81,9 @@ main {
         }
 
         button {
-            position: absolute;
-            right: 0.8rem;
             background: none;
             cursor: pointer;
+            margin: 0 0.5rem;
 
             i {
                 color: var(--red);
@@ -102,7 +106,7 @@ footer {
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
-        padding: 0.75rem 2rem;
+        padding: 0.75rem 1.5rem;
 
         button {
             background: none;
@@ -149,5 +153,59 @@ footer {
                 background: var(--dark-green);
             }
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 6.5vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 7vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 8vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 9vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 10vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 11vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 12vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 14vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    div.app {
+        padding: 2rem 1.5rem 2rem 15vw;
     }
 }
