@@ -17,7 +17,6 @@ export function addProduct() {
     }, 10);
 
     textInput.value = "";
-    console.log(listItem);
 }
 
 export function deleteProduct(element) {

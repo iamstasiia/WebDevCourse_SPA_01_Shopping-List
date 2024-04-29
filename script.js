@@ -7,6 +7,7 @@ const shoppingCart = document.getElementById("shopping-cart");
 const crossedCart = document.getElementById("crossed-cart");
 const main = document.querySelector("main");
 
+// Form
 textForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -18,38 +19,53 @@ textForm.addEventListener("submit", (event) => {
 // Shopping Cart
 shoppingCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
-        event.target.classList.add("checked");
-
-        setTimeout(() => {
-            event.target.style.opacity = 0;
-        }, 700);
-
-        setTimeout(() => {
+        if (
+            document.querySelectorAll(".checked").length === 0 &&
+            shoppingCart.querySelectorAll("li")[
+                shoppingCart.querySelectorAll("li").length - 1
+            ] === event.target
+        ) {
+            event.target.classList.add("checked");
             crossedCart.append(event.target);
-        }, 1400);
+        } else {
+            event.target.classList.add("checked");
 
-        setTimeout(() => {
-            event.target.style.opacity = 1;
-        }, 1410);
+            setTimeout(() => {
+                event.target.style.opacity = 0;
+            }, 700);
+
+            setTimeout(() => {
+                crossedCart.append(event.target);
+            }, 1400);
+
+            setTimeout(() => {
+                event.target.style.opacity = 1;
+            }, 1410);
+        }
     }
 });
 
 // Crossed Cart
 crossedCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
-        event.target.classList.toggle("checked");
-
-        setTimeout(() => {
-            event.target.style.opacity = 0;
-        }, 700);
-
-        setTimeout(() => {
+        if (crossedCart.querySelectorAll("li")[0] === event.target) {
+            event.target.classList.toggle("checked");
             shoppingCart.append(event.target);
-        }, 1400);
+        } else {
+            event.target.classList.toggle("checked");
 
-        setTimeout(() => {
-            event.target.style.opacity = 1;
-        }, 1410);
+            setTimeout(() => {
+                event.target.style.opacity = 0;
+            }, 700);
+
+            setTimeout(() => {
+                shoppingCart.append(event.target);
+            }, 1400);
+
+            setTimeout(() => {
+                event.target.style.opacity = 1;
+            }, 1410);
+        }
     }
 });
 
