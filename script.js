@@ -1,3 +1,6 @@
+import { addProduct, deleteProduct } from "./functions.js";
+
+// Variables
 const textInput = document.getElementById("text-input");
 const textForm = document.getElementById("text-form");
 const shoppingCart = document.getElementById("shopping-cart");
@@ -8,24 +11,11 @@ textForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     if (textInput.value.length !== 0) {
-        const listItem = document.createElement("li");
-        listItem.innerHTML =
-            textInput.value[0].toUpperCase() +
-            textInput.value.slice(1).toLowerCase();
-        shoppingCart.append(listItem);
-
-        const removeButton = document.createElement("button");
-        removeButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
-        listItem.append(removeButton);
-
-        setTimeout(() => {
-            listItem.style.opacity = 1;
-        }, 10);
-
-        textInput.value = "";
+        return addProduct();
     }
 });
 
+// Shopping Cart
 shoppingCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
         event.target.classList.add("checked");
@@ -44,6 +34,7 @@ shoppingCart.addEventListener("click", (event) => {
     }
 });
 
+// Crossed Cart
 crossedCart.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
         event.target.classList.toggle("checked");
@@ -62,32 +53,26 @@ crossedCart.addEventListener("click", (event) => {
     }
 });
 
+// Main
 main.addEventListener("click", (e) => {
     if (e.target.tagName === "I") {
         const listItem = e.target.parentElement.parentElement;
-        return Delete(listItem);
+        return deleteProduct(listItem);
     }
 });
 
+// Delete Crossed
 document.getElementById("delete-crossed").addEventListener("click", () => {
     const crossedItems = document.querySelectorAll(".checked");
     crossedItems.forEach((item) => {
-        return Delete(item);
+        return deleteProduct(item);
     });
 });
 
+// Delete All
 document.getElementById("delete-all").addEventListener("click", () => {
     const allItems = document.querySelectorAll("main li");
     allItems.forEach((item) => {
-        return Delete(item);
+        return deleteProduct(item);
     });
 });
-
-function Delete(element) {
-    setTimeout(() => {
-        element.style.opacity = 0;
-    }, 10);
-    setTimeout(() => {
-        element.remove();
-    }, 710);
-}
