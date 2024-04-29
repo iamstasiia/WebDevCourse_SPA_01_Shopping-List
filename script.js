@@ -53,6 +53,36 @@ shoppingCart.addEventListener("click", (event) => {
     }
 });
 
+crossedCart.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("checked");
+
+        setTimeout(() => {
+            event.target.style.opacity = 0;
+        }, 500);
+
+        setTimeout(() => {
+            shoppingCart.append(event.target);
+        }, 1500);
+
+        setTimeout(() => {
+            event.target.style.opacity = 1;
+        }, 2000);
+    }
+
+    if (event.target.tagName === "I") {
+        const listItem = event.target.parentElement.parentElement;
+
+        setTimeout(() => {
+            listItem.style.opacity = 0;
+        }, 10);
+
+        setTimeout(() => {
+            listItem.remove();
+        }, 1000);
+    }
+});
+
 document.getElementById("delete-crossed").addEventListener("click", () => {
     const crossedItems = document.querySelectorAll(".checked");
 
