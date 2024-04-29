@@ -13,7 +13,7 @@ textForm.addEventListener("submit", (event) => {
 
         const removeButton = document.createElement("button");
         removeButton.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
-        listItem.appendChild(removeButton);
+        listItem.append(removeButton);
 
         setTimeout(() => {
             listItem.style.opacity = 1;
@@ -29,15 +29,15 @@ shoppingCart.addEventListener("click", (event) => {
 
         setTimeout(() => {
             event.target.style.opacity = 0;
-        }, 500);
+        }, 700);
 
         setTimeout(() => {
             crossedCart.append(event.target);
-        }, 1500);
+        }, 1400);
 
         setTimeout(() => {
             event.target.style.opacity = 1;
-        }, 2000);
+        }, 1410);
     }
 
     if (event.target.tagName === "I") {
@@ -49,7 +49,7 @@ shoppingCart.addEventListener("click", (event) => {
 
         setTimeout(() => {
             listItem.remove();
-        }, 1000);
+        }, 710);
     }
 });
 
@@ -59,15 +59,15 @@ crossedCart.addEventListener("click", (event) => {
 
         setTimeout(() => {
             event.target.style.opacity = 0;
-        }, 500);
+        }, 700);
 
         setTimeout(() => {
             shoppingCart.append(event.target);
-        }, 1500);
+        }, 1400);
 
         setTimeout(() => {
             event.target.style.opacity = 1;
-        }, 2000);
+        }, 1410);
     }
 
     if (event.target.tagName === "I") {
@@ -79,7 +79,7 @@ crossedCart.addEventListener("click", (event) => {
 
         setTimeout(() => {
             listItem.remove();
-        }, 1000);
+        }, 710);
     }
 });
 
@@ -92,7 +92,7 @@ document.getElementById("delete-crossed").addEventListener("click", () => {
         }, 10);
         setTimeout(() => {
             item.remove();
-        }, 1000);
+        }, 710);
     });
 });
 
@@ -105,6 +105,6 @@ document.getElementById("delete-all").addEventListener("click", () => {
         }, 10);
         setTimeout(() => {
             item.remove();
-        }, 1000);
+        }, 710);
     });
 });
