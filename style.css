@@ -6,38 +6,33 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
-    font-family: 'Anaheim', sans-serif;
+    font-family: "Anaheim", sans-serif;
     font-size: 16px;
 }
 
 :root {
-    --dark-red: #A4402A;
-    --red: #BC4E50;
-    --orange: #B66B35;
-    --dark-beige: #D6A88C;
-    --beige: #E8C7B2;
-    --dark-green: #4E6543;
-    --green: #718E66;
-    --light-green: #ADBB9F;
-    --light-gray: #EEECE5;
+    --dark-red: #a4402a;
+    --red: #bc4e50;
+    --orange: #b66b35;
+    --dark-beige: #d6a88c;
+    --beige: #e8c7b2;
+    --dark-green: #4e6543;
+    --green: #718e66;
+    --light-green: #adbb9f;
+    --light-gray: #eeece5;
 }
 
 body {
     background: url(./img/pexels-element5-1470170.jpg) top left/cover no-repeat fixed;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 3.5vw 0;
     display: grid;
     grid-template-columns: minmax(0px, 57vw) minmax(20rem, auto) minmax(0px, 10vw);
 
-    box-shadow:
-    inset var(--dark-beige) -6.5vw 0,
-    inset var(--red) -13vw 0, 
-    inset var(--beige) -19.5vw 0, 
-    inset var(--dark-red) -26vw 0, 
-    inset var(--orange) -32.5vw 0,
-    inset var(--light-green) -39vw 0,
-    inset var(--dark-green) -45.5vw 0;
+    box-shadow: inset var(--dark-beige) -6.5vw 0, inset var(--red) -13vw 0, inset var(--beige) -19.5vw 0,
+        inset var(--dark-red) -26vw 0, inset var(--orange) -32.5vw 0, inset var(--light-green) -39vw 0,
+        inset var(--dark-green) -45.5vw 0;
 }
 
 div.app {
@@ -52,7 +47,7 @@ div.app {
 }
 
 header h1 {
-    font-family: 'Fredericka the Great', display;
+    font-family: "Fredericka the Great", display;
     font-size: 2rem;
     font-weight: normal;
     text-align: center;
@@ -75,7 +70,7 @@ main {
         transition: all 0.7s ease;
 
         &::before {
-            content: '☐';
+            content: "☐";
             position: absolute;
             left: 0;
         }
@@ -87,8 +82,8 @@ main {
 
             i {
                 color: var(--red);
-            }            
-        } 
+            }
+        }
     }
 
     li.checked {
@@ -96,7 +91,7 @@ main {
         color: var(--orange);
 
         &::before {
-            content: '☑';
+            content: "☑";
         }
     }
 }
@@ -128,7 +123,6 @@ footer {
         flex-wrap: nowrap;
         background-color: var(--light-gray);
         border-radius: 0.5rem;
-
 
         input {
             width: 100%;
